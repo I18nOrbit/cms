@@ -11,15 +11,15 @@ I want to implement something like:
 
 This will generate the file bellow:
 
-```json
 es_ES/shared.json
+```json
 {
     "validation.require": "Requerido"
 }
 ```
 
-```json
 en_US/shared.json
+```json
 {
     "validation.require": "Required"
 }
