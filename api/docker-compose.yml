@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16.1
+    restart: always
+    environment:
+      POSTGRES_DB: ${PG_DB_NAME}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    ports:
+      - "${PG_PORT}:5432"
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+      - $HOME/.ssh/:/home/vscode/.ssh/
+    command: sleep infinity
