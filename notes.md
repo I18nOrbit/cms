@@ -9,22 +9,27 @@ id  | language  | i18n_message  | group     | i18n_key
 
 This will generate the file bellow:
 
+```json
 es_ES/shared.json
 {
     "validation.require": "Requerido"
 }
+```
 
-
+```json
 en_US/shared.json
 {
     "validation.require": "Required"
 }
-
+```
 
 pt_BR/shared.json
+
+```json
 {
     "validation.require": "Obrigatório"
 }
+```
 
 # Tradeoffs
 
