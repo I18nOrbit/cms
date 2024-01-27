@@ -14,10 +14,13 @@ export class FactorySpecHelper {
     fullName?: string
   }) => {
     const user = await User.create({ fullName, email, password })
-    const { token } = (await User.authTokens.create(user)).toJSON()
+    const authorize = await User.authTokens.create(user)
+    const { token } = authorize.toJSON()
+
     const headers = {
       Authorization: `Bearer ${token}`,
     }
+
     return { user, token, headers }
   }
 }

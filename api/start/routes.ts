@@ -7,11 +7,12 @@
 |
 */
 
-import LoginController from '#controllers/auth/login_controller'
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
-import UserController from '#controllers/me/users_controller'
-import TranslationsController from '#controllers/me/translations_controller'
+
+const UsersController = () => import('#controllers/me/users_controller')
+const TranslationsController = () => import('#controllers/me/translations_controller')
+const LoginController = () => import('#controllers/auth/login_controller')
 
 router.get('/', async () => {
   return {
@@ -27,7 +28,7 @@ router
 
 router
   .group(() => {
-    router.get('/', [UserController, 'show'])
+    router.get('/', [UsersController, 'show'])
     router.post('/translations', [TranslationsController, 'store'])
   })
   .prefix('/me')
