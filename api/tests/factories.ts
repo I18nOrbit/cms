@@ -1,23 +1,23 @@
-import User from "#models/user";
-import { faker } from "@faker-js/faker";
+import User from '#models/user'
+import { faker } from '@faker-js/faker'
 
 export class FactorySpecHelper {
-  static USER_PASSWORD = "12345678Kk!";
+  static USER_PASSWORD = '12345678Kk!'
 
   static create_user = async ({
     email = faker.internet.email(),
     password = FactorySpecHelper.USER_PASSWORD,
     fullName = faker.person.fullName(),
   }: {
-    email?: string;
-    password?: string;
-    fullName?: string;
+    email?: string
+    password?: string
+    fullName?: string
   }) => {
-    const user = await User.create({ fullName, email, password });
-    const { token } = (await User.authTokens.create(user)).toJSON();
+    const user = await User.create({ fullName, email, password })
+    const { token } = (await User.authTokens.create(user)).toJSON()
     const headers = {
       Authorization: `Bearer ${token}`,
-    };
-    return { user, token, headers };
-  };
+    }
+    return { user, token, headers }
+  }
 }

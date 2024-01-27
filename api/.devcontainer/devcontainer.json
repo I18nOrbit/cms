@@ -4,15 +4,13 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "remoteEnv": {
-    "GIT_EDITOR": "code --wait"
+    "GIT_EDITOR": "code --wait",
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "GitHub.github-vscode-theme"
-      ]
-    }
+      "extensions": ["GitHub.github-vscode-theme"],
+    },
   },
   "initializeCommand": "ls",
-  "postAttachCommand": "yarn"
+  "postAttachCommand": "yarn",
 }

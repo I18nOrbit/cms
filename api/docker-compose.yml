@@ -7,9 +7,9 @@ services:
       POSTGRES_DB: ${PG_DB_NAME}
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASSWORD}
-      POSTGRES_HOST_AUTH_METHOD: "trust"
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
     ports:
-      - "${PG_PORT}:5432"
+      - '${PG_PORT}:5432'
   app:
     build:
       context: .

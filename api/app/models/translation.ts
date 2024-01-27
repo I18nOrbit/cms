@@ -1,18 +1,18 @@
-import { BaseModel, column } from "@adonisjs/lucid/orm";
+import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class Translation extends BaseModel {
   @column({ isPrimary: true })
-  declare id: number;
-  
-  @column()
-  declare language: string;
+  declare id: number
 
   @column()
-  declare message: string;
+  declare language: string
 
   @column()
-  declare group: string;
+  declare message: string
 
   @column()
-  declare key: string;
+  declare group: string
+
+  @column()
+  declare key: string
 }
