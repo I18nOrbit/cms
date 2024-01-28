@@ -1,8 +1,10 @@
 import { FactorySpecHelper } from '#tests/factories'
 import { test } from '@japa/runner'
 import { faker } from '@faker-js/faker'
+import Translation from '#models/translation'
+import { TranslationFactory } from '#database/factories/translation'
 
-test.group('Me translations', () => {
+test.group('POST /me/translations', () => {
   test('Should store a new i18n key', async ({ client }) => {
     // Arrange
     const { headers } = await FactorySpecHelper.create_user({})
@@ -30,7 +32,7 @@ test.group('Me translations', () => {
       key,
       group: 'global',
     })
-  }).tags(['translations', 'focus'])
+  }).tags(['translations'])
   test('Should not store same group-key-language', async ({ client }) => {
     // Arrange
     const { headers } = await FactorySpecHelper.create_user({})
@@ -83,4 +85,24 @@ test.group('Me translations', () => {
     // assert
     response.assertStatus(422)
   }).tags(['translations'])
+})
+
+test.group('GET /me/translations', ({ each }) => {
+  each.setup(async () => {
+    Translation.truncate()
+  })
+
+  test('Should get all translations', async ({ client, assert }) => {
+    // Arrange
+    const { headers } = await FactorySpecHelper.create_user({})
+    TranslationFactory.merge({ group: 'shared', language: 'en-US' }).createMany(3)
+    TranslationFactory.merge({ group: 'shared', language: 'pt-BR' }).createMany(3)
+
+    // act
+    const response = await client.get('/me/translations/en-US/shared').headers(headers)
+
+    // assert
+    response.assertStatus(200)
+    assert.lengthOf(Object.keys(response.body()), 3)
+  }).tags(['translations', 'focus'])
 })

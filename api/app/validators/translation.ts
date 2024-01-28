@@ -14,3 +14,10 @@ export const createTranslationValidator = vine.compile(
     group: vine.string().trim().escape().optional(),
   })
 )
+
+export const getTranslationsValidator = vine.compile(
+  vine.object({
+    language: vine.string().use(isValidLanguagePattern()),
+    group: vine.string().trim().escape().optional(),
+  })
+)

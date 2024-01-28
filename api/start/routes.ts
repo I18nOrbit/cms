@@ -29,7 +29,9 @@ router
 router
   .group(() => {
     router.get('/', [UsersController, 'show'])
+    router.get('/translations', [TranslationsController, 'index'])
     router.post('/translations', [TranslationsController, 'store'])
+    router.get('/translations/:language/:group', [TranslationsController, 'translation_group'])
   })
   .prefix('/me')
   .use(
