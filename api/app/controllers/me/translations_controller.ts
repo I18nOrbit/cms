@@ -29,7 +29,10 @@ export default class TranslationsController {
   async translation_group({ params }: HttpContext) {
     const { language, group } = await getTranslationsValidator.validate(params)
 
-    const translations = await Translation.query().where('language', language).where('group', group)
+    const translations = await Translation.query()
+      .where('language', language)
+      .where('group', group ?? Translation.default_group_value)
+      .exec()
 
     const data: Record<string, string> = {}
 
