@@ -5,12 +5,14 @@ export default class TranslationsController {
   async store({ request }: HttpContext) {
     const { language, message, group, key } = request.only(['language', 'message', 'group', 'key'])
 
-    const translation = await Translation.create({
+    const { id } = await Translation.create({
       language,
       message,
       group,
       key,
     })
+
+    const translation = await Translation.findOrFail(id)
 
     return translation.serialize()
   }
