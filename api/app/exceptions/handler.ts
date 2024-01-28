@@ -1,5 +1,6 @@
 import app from '@adonisjs/core/services/app'
 import { HttpContext, ExceptionHandler } from '@adonisjs/core/http'
+import ConflictException from './db_conflict_exception.js'
 
 export default class HttpExceptionHandler extends ExceptionHandler {
   /**
@@ -13,6 +14,9 @@ export default class HttpExceptionHandler extends ExceptionHandler {
    * response to the client
    */
   async handle(error: unknown, ctx: HttpContext) {
+    if (this.isDatabaseConflicException(error)) {
+      return ConflictException.handler(ctx)
+    }
     return super.handle(error, ctx)
   }
 
@@ -24,5 +28,11 @@ export default class HttpExceptionHandler extends ExceptionHandler {
    */
   async report(error: unknown, ctx: HttpContext) {
     return super.report(error, ctx)
+  }
+
+  private isDatabaseConflicException(error: unknown) {
+    if (typeof error === 'object' && error !== null && 'routine' in error) {
+      return error.routine === ConflictException.code
+    }
   }
 }

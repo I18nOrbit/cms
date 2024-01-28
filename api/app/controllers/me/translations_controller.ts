@@ -1,18 +1,18 @@
 import Translation from '#models/translation'
+import { createTranslationValidator } from '#validators/translation'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class TranslationsController {
   async store({ request }: HttpContext) {
-    const { language, message, group, key } = request.only(['language', 'message', 'group', 'key'])
+    const params = request.all()
+    const { language, message, group, key } = await createTranslationValidator.validate(params)
 
-    const { id } = await Translation.create({
+    const translation = await Translation.create({
       language,
       message,
-      group,
+      group: group ?? Translation.default_group_value,
       key,
     })
-
-    const translation = await Translation.findOrFail(id)
 
     return translation.serialize()
   }
