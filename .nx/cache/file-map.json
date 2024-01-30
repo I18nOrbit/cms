@@ -1,0 +1,392 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.3.0",
+  "deps": {
+    "@nx/devkit": "^17.3.0",
+    "@nx/eslint": "^17.3.0",
+    "@nx/react": "^17.3.0"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "orbit-app-e2e": [
+        {
+          "file": "orbit/orbit-app-e2e/.eslintrc.json",
+          "hash": "12199001048877152138"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/cypress.config.ts",
+          "hash": "12586416982398116375",
+          "deps": [
+            "npm:@nx/cypress/plugins/cypress-preset",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "orbit/orbit-app-e2e/project.json",
+          "hash": "13629057962957142549"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/src/e2e/app.cy.ts",
+          "hash": "7022632142392746387"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "orbit/orbit-app-e2e/tsconfig.json",
+          "hash": "4966899981699294432"
+        }
+      ],
+      "orbit-app": [
+        {
+          "file": "orbit/orbit-app/.eslintrc.json",
+          "hash": "11958588859364753839"
+        },
+        {
+          "file": "orbit/orbit-app/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "orbit/orbit-app/jest.config.ts",
+          "hash": "4216059881787973913"
+        },
+        {
+          "file": "orbit/orbit-app/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "orbit/orbit-app/next.config.js",
+          "hash": "17252635002163063865",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "orbit/orbit-app/project.json",
+          "hash": "16480962809996848437"
+        },
+        {
+          "file": "orbit/orbit-app/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "orbit/orbit-app/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "orbit/orbit-app/src/app/api/hello/route.ts",
+          "hash": "495073956729887886"
+        },
+        {
+          "file": "orbit/orbit-app/src/app/global.css",
+          "hash": "2063387531564215811"
+        },
+        {
+          "file": "orbit/orbit-app/src/app/layout.tsx",
+          "hash": "9830143481951441995"
+        },
+        {
+          "file": "orbit/orbit-app/src/app/page.module.scss",
+          "hash": "4786619528779355986"
+        },
+        {
+          "file": "orbit/orbit-app/src/app/page.tsx",
+          "hash": "12349695813282092601"
+        },
+        {
+          "file": "orbit/orbit-app/tsconfig.json",
+          "hash": "17362848683720468714"
+        },
+        {
+          "file": "orbit/orbit-app/tsconfig.spec.json",
+          "hash": "8636949703417217507"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": "LICENSE.txt",
+        "hash": "15936325052855891631"
+      },
+      {
+        "file": "README.md",
+        "hash": "8517730564464835796"
+      },
+      {
+        "file": "api/.devcontainer/Dockerfile",
+        "hash": "5650281600087007901"
+      },
+      {
+        "file": "api/.devcontainer/devcontainer.json",
+        "hash": "15958649101889372248"
+      },
+      {
+        "file": "api/.editorconfig",
+        "hash": "14055066208268429585"
+      },
+      {
+        "file": "api/.env.example",
+        "hash": "6220272176274639985"
+      },
+      {
+        "file": "api/.gitignore",
+        "hash": "4394578452816658458"
+      },
+      {
+        "file": "api/ace.js",
+        "hash": "13394107048207593725"
+      },
+      {
+        "file": "api/adonisrc.ts",
+        "hash": "9137426360401457190"
+      },
+      {
+        "file": "api/app/controllers/auth/login_controller.ts",
+        "hash": "16813424787618671159"
+      },
+      {
+        "file": "api/app/controllers/me/translations_controller.ts",
+        "hash": "5226267940899063343"
+      },
+      {
+        "file": "api/app/controllers/me/users_controller.ts",
+        "hash": "7333869686110117649"
+      },
+      {
+        "file": "api/app/exceptions/db_conflict_exception.ts",
+        "hash": "4853268930271383759"
+      },
+      {
+        "file": "api/app/exceptions/handler.ts",
+        "hash": "13828703655165763467"
+      },
+      {
+        "file": "api/app/middleware/auth_middleware.ts",
+        "hash": "16505216407148582126"
+      },
+      {
+        "file": "api/app/middleware/container_bindings_middleware.ts",
+        "hash": "13376073306998002636"
+      },
+      {
+        "file": "api/app/middleware/force_json_response_middleware.ts",
+        "hash": "17072095641708251448"
+      },
+      {
+        "file": "api/app/middleware/guest_middleware.ts",
+        "hash": "17955756918768163091"
+      },
+      {
+        "file": "api/app/models/translation.ts",
+        "hash": "14800544747185171250"
+      },
+      {
+        "file": "api/app/models/user.ts",
+        "hash": "14601347451775765289"
+      },
+      {
+        "file": "api/app/validators/rules/is_language_pattern.ts",
+        "hash": "1843149070402125426"
+      },
+      {
+        "file": "api/app/validators/translation.ts",
+        "hash": "2716871053586214930"
+      },
+      {
+        "file": "api/bin/console.ts",
+        "hash": "1865019472680030332"
+      },
+      {
+        "file": "api/bin/server.ts",
+        "hash": "14393562204676428676"
+      },
+      {
+        "file": "api/bin/test.ts",
+        "hash": "1376336991517001216"
+      },
+      {
+        "file": "api/config/app.ts",
+        "hash": "11608222912901957773"
+      },
+      {
+        "file": "api/config/auth.ts",
+        "hash": "9626048315851621531"
+      },
+      {
+        "file": "api/config/bodyparser.ts",
+        "hash": "7446426491078618688"
+      },
+      {
+        "file": "api/config/cors.ts",
+        "hash": "3189012618994018764"
+      },
+      {
+        "file": "api/config/database.ts",
+        "hash": "17712094046606666244"
+      },
+      {
+        "file": "api/config/hash.ts",
+        "hash": "17490154772935848561"
+      },
+      {
+        "file": "api/config/logger.ts",
+        "hash": "16924751435058305247"
+      },
+      {
+        "file": "api/config/session.ts",
+        "hash": "9540996412783301576"
+      },
+      {
+        "file": "api/database/factories/translation.ts",
+        "hash": "17242959198010783585"
+      },
+      {
+        "file": "api/database/migrations/1706376481691_create_users_table.ts",
+        "hash": "17006191796189467086"
+      },
+      {
+        "file": "api/database/migrations/1706379204378_create_translations_table.ts",
+        "hash": "1522901575720940725"
+      },
+      {
+        "file": "api/database/migrations/1706386809249_create_auth_access_tokens_table.ts",
+        "hash": "12078262061869228607"
+      },
+      {
+        "file": "api/docker-compose.yml",
+        "hash": "5937572749532062337"
+      },
+      {
+        "file": "api/package.json",
+        "hash": "6920074410163759588"
+      },
+      {
+        "file": "api/readme.md",
+        "hash": "7128169785407876050"
+      },
+      {
+        "file": "api/start/env.ts",
+        "hash": "15844192564986695396"
+      },
+      {
+        "file": "api/start/kernel.ts",
+        "hash": "6959707774084857866"
+      },
+      {
+        "file": "api/start/routes.ts",
+        "hash": "493125822526794136"
+      },
+      {
+        "file": "api/tests/bootstrap.ts",
+        "hash": "10529358306214840391"
+      },
+      {
+        "file": "api/tests/factories.ts",
+        "hash": "17681376041991505210"
+      },
+      {
+        "file": "api/tests/functional/auth/login.spec.ts",
+        "hash": "6858941009262566941"
+      },
+      {
+        "file": "api/tests/functional/me/translations.spec.ts",
+        "hash": "7528172607769169659"
+      },
+      {
+        "file": "api/tests/functional/me/users.spec.ts",
+        "hash": "3117998803261292120"
+      },
+      {
+        "file": "api/tsconfig.json",
+        "hash": "18366597445791612853"
+      },
+      {
+        "file": "api/yarn.lock",
+        "hash": "816089008820289055"
+      },
+      {
+        "file": "notes.md",
+        "hash": "15913546101032722778"
+      },
+      {
+        "file": "orbit/.editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "orbit/.eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "orbit/.eslintrc.json",
+        "hash": "17866138117546000433"
+      },
+      {
+        "file": "orbit/.gitignore",
+        "hash": "5996992415103590475"
+      },
+      {
+        "file": "orbit/.prettierignore",
+        "hash": "16448050467312557263"
+      },
+      {
+        "file": "orbit/.prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "orbit/.vscode/extensions.json",
+        "hash": "4934098906304722861"
+      },
+      {
+        "file": "orbit/README.md",
+        "hash": "4240389057811911259"
+      },
+      {
+        "file": "orbit/jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "orbit/jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "orbit/nx.json",
+        "hash": "6733031264057201069"
+      },
+      {
+        "file": "orbit/package.json",
+        "hash": "15723832254386960102"
+      },
+      {
+        "file": "orbit/tsconfig.base.json",
+        "hash": "16936441711144470533"
+      },
+      {
+        "file": "orbit/yarn.lock",
+        "hash": "16808879359097673818"
+      },
+      {
+        "file": "package.json",
+        "hash": "11618318469568210302"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "15285211927308745140"
+      }
+    ]
+  }
+}
