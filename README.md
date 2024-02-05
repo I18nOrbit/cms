@@ -27,6 +27,8 @@ For this reason, I opted for a more opinionated backend; one that would remain r
 
 As for the frontend, while I personally find Angular to be superior, I've chosen React. This decision is driven by my desire to mentor newcomers on a real project. React's simpler complexity and strong market presence should enable them to acquire skills more quickly and enhance their employability.
 
+#  
+
 ## Paid alternatives
 
 https://lokalise.com/
