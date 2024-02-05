@@ -1,11 +1,11 @@
 {
-    "$schema": "https://railway.app/railway.schema.json",
-    "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "./Dockerfile"
-    },
-    "deploy": {
-        "startCommand": "node ace devops; npm start",
-        "restartPolicyType": "ON_FAILURE"
-    }
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "/"
+  },
+  "deploy": {
+    "startCommand": "node ace devops; npm start",
+    "restartPolicyType": "ON_FAILURE"
+  }
 }
