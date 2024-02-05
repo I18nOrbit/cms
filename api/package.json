@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "node --loader='ts-node/esm' bin/server.ts",
+    "start:prod": "node ace devops; npm start",
     "build": "node ace build",
     "dev": "node ace serve --watch",
     "test": "node ace test",
