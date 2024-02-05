@@ -5,7 +5,7 @@
         "dockerfilePath": "./api/Dockerfile"
     },
     "deploy": {
-        "startCommand": "node ace devops; npm start",
+        "startCommand": "cd api && node ace devops; npm start",
         "restartPolicyType": "ON_FAILURE"
     }
 }
