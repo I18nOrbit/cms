@@ -2,11 +2,22 @@
 
 The Openi18n CMS is an alternative open source and self hosted for manage your website i18n.
 
+THIS PROJECT IS NOT READY FOR PRODUCTION YET
+
 # Stack
 
 - AdonisJS
 
 - React
+
+# Start API
+
+Rename `.env.example` to `.env`
+
+```bash
+$ cd api
+$ docker compose up app-production -d
+```
 
 ## Stack notes
 

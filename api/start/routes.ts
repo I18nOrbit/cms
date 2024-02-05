@@ -7,35 +7,40 @@
 |
 */
 
-import router from '@adonisjs/core/services/router'
-import { middleware } from './kernel.js'
+import router from "@adonisjs/core/services/router";
+import { middleware } from "./kernel.js";
 
-const UsersController = () => import('#controllers/me/users_controller')
-const TranslationsController = () => import('#controllers/me/translations_controller')
-const LoginController = () => import('#controllers/auth/login_controller')
+const UsersController = () => import("#controllers/me/users_controller");
+const TranslationsController = () =>
+  import("#controllers/translations_controller");
+const LoginController = () => import("#controllers/auth/login_controller");
 
-router.get('/', async () => {
+router.get("/", async () => {
   return {
-    hello: 'world',
-  }
-})
+    hello: "world",
+  };
+});
 
 router
   .group(() => {
-    router.post('/login', [LoginController, 'store'])
+    router.post("/login", [LoginController, "store"]);
   })
-  .prefix('/auth')
+  .prefix("/auth");
 
 router
   .group(() => {
-    router.get('/', [UsersController, 'show'])
-    router.get('/translations', [TranslationsController, 'index'])
-    router.post('/translations', [TranslationsController, 'store'])
-    router.get('/translations/:language/:group', [TranslationsController, 'translation_group'])
+    router.get("/", [UsersController, "show"]);
+    router.post("/translations", [TranslationsController, "store"]);
   })
-  .prefix('/me')
+  .prefix("/me")
   .use(
     middleware.auth({
-      guards: ['api'],
-    })
-  )
+      guards: ["api"],
+    }),
+  );
+
+router.get("/translations", [TranslationsController, "index"]);
+router.get("/translations/:language/:group", [
+  TranslationsController,
+  "translation_group",
+]);

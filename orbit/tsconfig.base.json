@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@orbit/translations": ["packages/translations/src/index.ts"]
+      "@orbit/core": ["packages/core/src/index.ts"],
+      "@orbit/translations": ["packages/translations/src/index.ts"],
+      "@orbit/ui": ["packages/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -3,6 +3,11 @@ services:
   postgres:
     image: postgres:16.1
     restart: always
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${PG_USER}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
     environment:
       POSTGRES_DB: ${PG_DB_NAME}
       POSTGRES_USER: ${PG_USER}
@@ -18,3 +23,14 @@ services:
       - .:/workspace:cached
       - $HOME/.ssh/:/home/vscode/.ssh/
     command: sleep infinity
+  app-production:
+    depends_on:
+      - postgres
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - '${PORT}:3333'
+    command: node ace devops; npm start

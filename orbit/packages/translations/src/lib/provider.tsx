@@ -1,21 +1,21 @@
 import i18n from 'i18next'
 import HttpBackend, { HttpBackendOptions } from "i18next-http-backend";
+import { http } from 'packages/core/src/http';
 import { I18nextProvider } from 'react-i18next'
 
 i18n
   .use(HttpBackend)
   .init<HttpBackendOptions>({
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'en-US',
+    fallbackLng: 'en-US',
     backend: {
-      request: (options, url, payload, callback) => {
-        console.log(url)
+      loadPath: '/translations/{{lng}}/{{ns}}',
+      request: async (_options, url, _payload, callback) => {
+        const response = await http.get(url);
+
         callback(null, {
           status: 200,
-          data: {
-            'hello_there': 'Hello there',
-            'hello_user': 'Hello user',
-          }
+          data: response.data,
         })
       }
     },
