@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { _get } from "./[GET]";
 
-export const getTranslationsQueryKey = ["me", "translations"];
+export const getTranslationsQueryKey = ["translations"];
 
 export function useGetTranslations() {
   return useQuery({

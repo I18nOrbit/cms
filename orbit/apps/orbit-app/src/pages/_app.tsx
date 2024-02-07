@@ -1,6 +1,5 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
 import { I18nProvider } from '@orbit/translations';
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';

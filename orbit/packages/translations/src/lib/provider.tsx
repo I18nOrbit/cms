@@ -11,6 +11,7 @@ i18n
     backend: {
       loadPath: '/translations/{{lng}}/{{ns}}',
       request: async (_options, url, _payload, callback) => {
+        // @todo: handle error
         const response = await http.get(url);
 
         callback(null, {
