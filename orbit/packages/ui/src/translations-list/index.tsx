@@ -1,8 +1,9 @@
 import { Table } from "@mantine/core";
 import { useGetTranslations } from "@orbit/core";
 import { TranslationEdit } from "./components/translation-edit";
+import { TableToolbar } from "./components/toolbar";
 
-export function TranslationsList() {
+export function TranslationsList({ plugins }: TranslationListProps) {
   const { data: result } = useGetTranslations()
   const data = result?.data ?? []
   const languages = result?.meta.languages ?? []
@@ -20,6 +21,7 @@ export function TranslationsList() {
   return (
     <>
     <TranslationEdit />
+    { plugins?.toolbar }
     <Table>
       <Table.Thead>
         <Table.Tr>
@@ -38,3 +40,5 @@ export function TranslationsList() {
   </>
   )
 }
+
+TranslationsList.Toolbar = TableToolbar;

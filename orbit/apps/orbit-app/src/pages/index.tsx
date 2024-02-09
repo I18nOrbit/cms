@@ -2,6 +2,7 @@ import { useTranslation } from '@orbit/translations';
 import { Layout, TranslationsList } from '@orbit/ui';
 import { usePostLogin } from '@orbit/core';
 import React from 'react';
+import { Flex } from '@mantine/core';
 
 export function Index() {
   const { t } = useTranslation('global');
@@ -15,7 +16,13 @@ export function Index() {
   }, []);
   return (
     <Layout>
-       <TranslationsList />
+       <TranslationsList plugins={{
+          toolbar: (
+            <Flex mb='lg' justify='flex-end'>
+              <TranslationsList.Toolbar />
+            </Flex>
+          )
+        }} />
     </Layout>
   );
 }

@@ -1,4 +1,4 @@
-import { Modal } from "@mantine/core";
+import { Modal, Textarea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 export function TranslationEdit() {
@@ -6,7 +6,9 @@ export function TranslationEdit() {
 
   return (
     <Modal opened={opened} onClose={handlers.close} title="Authentication" centered>
-
+      <Textarea label="PT"></Textarea>
+      <Textarea label="EN"></Textarea>
+      <Textarea label="ES"></Textarea>
     </Modal>
   )
 }
